@@ -1,24 +1,37 @@
+/* eslint-disable react/prop-types */
 // import TrendingBox from "./TrendingBox"
-import Container from './../../ui/Container';
-import TextBox from "../../ui/TextBox";
-import Spinner from "../../ui/Spinner";
-import Box from "../../ui/Box";
-import { useSearch } from './useSearch';
+import {  useContext, useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import {  searchProvider } from '../../data/constant';
+import { apiSearch } from '../../services/apiSearch';
+
+import Container from './../../components/ui/Container';
+import TextBox from "./../../components/ui/TextBox";
+import Box from "./../../components/ui/Box";
 
 function SearchContainer() {
-    const {data , isLoading} = useSearch()
+    const [data , setData] = useState([])
+    const navigate =  useNavigate()
+    const {query} = useContext(searchProvider) ;
 
-    if(isLoading) {
-        return <Spinner/>
-    }
+    useEffect(function(){
+       async function searchApiRequest() {
+         const apiData = await apiSearch(query)
+         setData(apiData.results)
+            }
+        searchApiRequest()
+        
+    },[query])
 
-    console.log(data.results)
+    if(data && data.length ===0) {
+        navigate('/trending')
+      }
 
     return (
         <Container>
-             <TextBox heading='Search'/>
-             {data.results.map(item => <Box item={item} key={item.id}/>)}
-        </Container>
+                <TextBox heading='Search'/> 
+                {data.map(item => <Box item={item} key={item.id}/>)}
+         </Container>
     )
 }
 

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { useDetails } from "./useDetails";
-import Spinner from "../../ui/Spinner";
-import { IMAGE_URL } from "../../utils/constant";
+import {IMAGE_URL}  from '../../data/constant'
 import { secondsToHms } from "../../utils/helper";
+import Spinner from "../../components/ui/Spinner";
+
 
 const Overlay = styled.div`
   background : linear-gradient(to right, rgba(31.5, 10.5, 10.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 10.5, 0.84) 50%, rgba(31.5, 10.5, 10.5, 0.84) 100%);

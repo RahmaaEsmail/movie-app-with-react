@@ -1,4 +1,4 @@
-import { API_KEY, BASE_URL } from "../utils/constant";
+import { API_KEY, BASE_URL } from "../data/constant";
 
 export async function apiTvShow() {
  const res = await fetch(`${BASE_URL}trending/tv/week?api_key=${API_KEY}`);

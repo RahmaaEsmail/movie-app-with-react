@@ -1,9 +1,9 @@
 // import TrendingBox from "./TrendingBox"
-import Container from './../../ui/Container';
-import TextBox from "../../ui/TextBox";
-import Spinner from "../../ui/Spinner";
-import Box from "../../ui/Box";
 import { useMovies } from './useMovie';
+import Container from './../../components/ui/Container';
+import TextBox from "./../../components/ui/TextBox";
+import Box from "./../../components/ui/Box";
+import Spinner from './../../components/ui/Spinner';
 
 
 

@@ -1,4 +1,4 @@
-import { API_KEY, BASE_URL } from "../utils/constant";
+import { API_KEY, BASE_URL } from "../data/constant";
 
 export async function apiPopular() {
  const res = await fetch(`${BASE_URL}movie/popular?api_key=${API_KEY}`);

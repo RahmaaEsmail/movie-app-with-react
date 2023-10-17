@@ -1,9 +1,9 @@
 // import TrendingBox from "./TrendingBox"
-import Container from './../../ui/Container';
-import TextBox from "../../ui/TextBox";
-import Spinner from "../../ui/Spinner";
-import Box from "../../ui/Box";
 import { usePopular } from './usePopular';
+import Container from './../../components/ui/Container';
+import TextBox from "./../../components/ui/TextBox";
+import Spinner from "./../../components/ui/Spinner";
+import Box from "./../../components/ui/Box";
 
 
 
